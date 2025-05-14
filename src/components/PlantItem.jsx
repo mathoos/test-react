@@ -1,13 +1,5 @@
-function PlantItem({name, category, price}){
-    return(
-        <>
-            <li>
-                <h2>{name}</h2>
-                <p>{category}</p>
-                <p>{price}</p>
-            </li>
-        </>
-    )
+function Enfant({onClickButton}){
+    return <button onClick={onClickButton}>Incrémenter</button>
 }
 
-export default PlantItem
+export default Enfant

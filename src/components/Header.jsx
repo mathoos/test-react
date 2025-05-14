@@ -1,3 +1,5 @@
+import "./Header.scss"
+
 let title = "Bonjour les gens"
 
 function Header({children}){

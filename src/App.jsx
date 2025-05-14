@@ -1,27 +1,38 @@
-import Header from "./components/Header.jsx";
-import {PlantList} from "./data/PlantList.jsx";
-import PlantItem from "./components/PlantItem.jsx";
-
+import { useEffect} from 'react';
+import Header from "./components/Header"
 
 function App() {
-    return (
+
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    console.log('L’élément est visible !')
+                }
+            })
+        })
+
+        const el = document.getElementById('section')
+        if (el) observer.observe(el)
+
+        return () => observer.disconnect()
+    }, [])
+
+
+
+
+    return(
         <>
-            <Header>
-                <p>Bienvenue sur notre catalogue de plantes !</p>
-            </Header>
-            <ul>
-                {PlantList.map(({id, name, category, price}) => (
-                    <PlantItem
-                        key={id}
-                        name={name}
-                        category={category}
-                        price={price}
-                    />
-                ))}
-            </ul>
+            <div>
+                <Header/>
+                <div id="section"></div>
+            </div>
         </>
     )
 }
 
-
 export default App
+
+
+
