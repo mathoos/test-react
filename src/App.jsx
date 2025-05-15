@@ -1,38 +1,22 @@
-import { useEffect} from 'react';
-import Header from "./components/Header"
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Article from './pages/Article'
 
 function App() {
-
-
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    console.log('L’élément est visible !')
-                }
-            })
-        })
-
-        const el = document.getElementById('section')
-        if (el) observer.observe(el)
-
-        return () => observer.disconnect()
-    }, [])
-
-
-
-
-    return(
-        <>
-            <div>
-                <Header/>
-                <div id="section"></div>
-            </div>
-        </>
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/article/:id" element={<Article />} />
+            </Routes>
+        </BrowserRouter>
     )
 }
 
 export default App
-
 
 
