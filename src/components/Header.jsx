@@ -1,14 +1,21 @@
-import "./Header.scss"
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
-let title = "Bonjour les gens"
+function Header() {
+    const { user, logout } = useContext(AuthContext);
 
-function Header({children}){
-    return(
+    return (
         <header>
-            <h1>{title}</h1>
-            {children}
+            {user ? (
+                <>
+                    <span>Bienvenue, {user.name}</span>
+                    <button onClick={logout}>Déconnexion</button>
+                </>
+            ) : (
+                <span>Vous n'êtes pas connecté(e)</span>
+            )}
         </header>
-    )
+    );
 }
 
-export default Header;
+export default Header

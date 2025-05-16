@@ -1,16 +1,13 @@
-import { Outlet, NavLink } from 'react-router-dom'
+import Counter from '../features/counter/Counter';
 
-function DashboardLayout() {
+const App = () => {
   return (
     <div>
-      <nav>
-        <NavLink to="profile">Profil</NavLink>
-        <NavLink to="articles">Articles</NavLink>
-      </nav>
-      <hr />
-      <Outlet /> {/* Affiche la sous-route ici */}
+        <h1>Mon App Redux</h1>
+        <Counter />
     </div>
-  )
-}
+  );
+};
 
-export default DashboardLayout
+export default App;
+
