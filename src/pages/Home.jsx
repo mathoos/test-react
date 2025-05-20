@@ -1,10 +1,9 @@
-import Counter from '../features/counter/Counter';
+import Navbar from "../components/Navbar"
 
 const App = () => {
   return (
     <div>
-        <h1>Mon App Redux</h1>
-        <Counter />
+        <Navbar/>
     </div>
   );
 };

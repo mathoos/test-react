@@ -1,0 +1,25 @@
+{
+    "interimaires": [
+        {
+            "id": 1,
+            "prenom": "Marie",
+            "nom": "Dupont",
+            "dateDebut": "2024-04-30",
+            "dateFin": "2024-04-18"
+        },
+        {
+            "id": 2,
+            "prenom": "Jean",
+            "nom": "Martin",
+            "dateDebut": "2024-02-14",
+            "dateFin": "2024-02-04"
+        },
+        {
+            "id": 3,
+            "prenom": "John",
+            "nom": "Doe",
+            "dateDebut": "2024-03-10",
+            "dateFin": "2024-03-20"
+        }
+    ]
+}

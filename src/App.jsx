@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import UserPage from './pages/UserPage';
+import Missions from './pages/Missions';
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
         <Router>
             <Routes>  
                 <Route path="/" element={<Home/>}/> 
-                <Route path="/user" element={<UserPage/>}/>    
+                <Route path="/missions" element={<Missions/>}/>    
             </Routes>
         </Router>
     );

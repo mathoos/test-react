@@ -1,14 +1,20 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useUsers } from '../hooks/useUsers';
 
 function Navbar() {
+    const { users } = useUsers();
+
     return (
-        <nav>
+        <nav style={{ marginBottom: "1rem", padding: "1rem", backgroundColor: "#f0f0f0" }}>
+            <div>
+                {users.map(user => 
+                    user.prenom).join(', ')
+                }
+            </div>
             <Link to="/">Accueil</Link> | 
-            <Link to="/about">À propos</Link> | 
-            <Link to="/contact">Contact</Link> |
-            <Link to="/article/:id">Article</Link>
+            <Link to="/missions"> Missions</Link>
         </nav>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;
